@@ -13,8 +13,10 @@ export const FETCH_WEATHER = 'FETCH_WEATHER';
 export function fetchWeather(city) {
 
 	const url =`${ROOT_URL}&q=${city},us`;
-
+	//this is a promise, created before the data returns
 	const request = axios.get(url);
+
+	//console.log("request: ", request);
 
 
 	return {

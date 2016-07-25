@@ -10,6 +10,7 @@ class SearchBar extends Component {
 
 		this.state = { term: ''};
 		//binds the onInputChange method to the proper top scope for accessing state
+		//for methods below - using bind method
 		this.onInputChange = this.onInputChange.bind(this);
 		this.onFormSubmit = this.onFormSubmit.bind(this);
 	}
@@ -43,9 +44,11 @@ class SearchBar extends Component {
 	}
 }
 
+//create action-dispatch link to redux thru bindActionCreators bind
 function mapDispatchToProps(dispatch) {
+	//ES5 dhothaand for fetchWeather:fetchWeather
 	return bindActionCreators({ fetchWeather}, dispatch);
 }
 
-//null is saying this container doesn't care about state
+//null is saying this container doesn't care about redux state
 export default connect(null, mapDispatchToProps)(SearchBar);
